@@ -1,7 +1,41 @@
-label{
-    width: 200px;
-    display:inline-block;
+body {
+background-image: url("../images/bgfade.jpg");
+background-size: 50%;
 }
+
+h3 {
+font-family: 'Calligraffitti', cursive;
+color: black;
+font-weight: bolder;
+}
+
+h4 {
+font-family: 'Reenie Beanie', cursive;
+color: #95320b;
+font-weight: bolder;
+}
+
+label {
+font-family: 'Reenie Beanie', cursive;
+color: #95320b;
+font-size: 30px;  
+display:inline-block;  
+}
+
+#filloutForm {
+    margin-left: 35%;
+}
+
+.header {
+    text-align: center;
+}
+
+.btn-warning {
+background-color:#eac0a4;
+width: 120px;
+height: 45px;
+}
+
 
 li {
     background: #4aaaa5;
