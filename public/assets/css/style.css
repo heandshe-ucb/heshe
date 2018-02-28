@@ -1,0 +1,49 @@
+label{
+    width: 200px;
+    display:inline-block;
+}
+
+li {
+    background: #4aaaa5;
+    width: 60%;
+    margin: 2%;
+    padding: 1%;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+}
+
+#leftDiv, #rightDiv {
+    width:50%;
+    float: left;
+}
+
+.create-form {
+    background: #4aaaa5;
+    padding: 10px;
+    width: 80%
+}
+
+#burgerid {
+    height: 20px;
+}
+
+#addburger {
+    margin: 0px 50px;
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+h1 {
+text-align: center}
+
+#addburger {
+    clear: left;
+    /* float: none; */
+}
