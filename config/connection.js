@@ -15,11 +15,11 @@ if (process.env.JAWSDB_URL) {
 
     });
 }
-console.log(connection);
+// console.log(connection);
 connection.connect(function (err) {
-    console.log("connection details: ",connection);
+    // console.log("connection details: ",connection);
     if (err) console.log("Error connecting: " + err.stack);
-    console.log("DB connection successful, ID " + connection.threadId);
+    // console.log("DB connection successful, ID " + connection.threadId);
 })
 
 module.exports = connection;
