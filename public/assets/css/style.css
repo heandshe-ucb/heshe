@@ -81,3 +81,24 @@ text-align: center}
     clear: left;
     /* float: none; */
 }
+
+#imageSlides, #aboutText {
+    background-color: beige;
+    margin:auto;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    /* border: black; */
+    border-width: medium;
+    width: 80%;
+    height: 200px;
+
+}
+
+#loginBtnDiv {
+    text-align: center;
+    /* width: 100%;   */
+}
+
+#loginGoogle {
+    width: 200px;
+}

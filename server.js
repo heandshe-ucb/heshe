@@ -1,7 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3001;
 
 var app = express();
 
@@ -26,5 +26,5 @@ var routes = require("./controllers/heandshe_controllers");
 app.use(routes);
 
 app.listen(PORT, function() {
-  console.log("App now listening at https://localhost:" + PORT);
+  console.log("App now listening at http://localhost:" + PORT);
 });
