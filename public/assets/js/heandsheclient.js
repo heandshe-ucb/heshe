@@ -33,4 +33,34 @@ $(function () {
         })
     })
 
+    $("#submitBtn").on("click", function() {
+        event.preventDefault();
+
+        var userInputData = {};
+
+
+        var cityState, distance, duration, date, time, experienceTypes = [];
+        
+
+        cityState = $('#cityandstate').val();
+        distance = $('#distance').val();
+        duration = $('#duration').val();
+        date = $('#dateinput').val();
+        time = $('#timeinput').val();
+        experienceTypes = $('#experienceTypes').val();
+
+        userInputData.cityState = cityState;
+        userInputData.distance = distance;
+        userInputData.duration = duration;
+        userInputData.date = date;
+        userInputData.time = time;
+        userInputData.experienceTypes = experienceTypes;
+        console.log(userInputData);
+        // console.log(cityState, distance, duration, date, time, experienceTypes);
+
+    });
+        
+
+
+
 })
