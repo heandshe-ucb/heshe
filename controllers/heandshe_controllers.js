@@ -25,6 +25,14 @@ router.get("/userinput", function (req, res) {
     });
 });
 
+router.post("/api/userinput", function(req, res){
+    console.log('in controller post', req.body);
+    heandshe.insert("navinjoy@gmail.com", req.body.cityState, req.body.distance, req.body.duration, req.body.date, req.body.time, req.body['experienceTypes[]'].toString(), function(result){
+        res.json({id : result.insertId});
+    })
+
+});
+
 router.get("/results", function (req, res) {
     heandshe.all(function (data) {
         var hbsObj = {

@@ -102,3 +102,15 @@ text-align: center}
 #loginGoogle {
     width: 200px;
 }
+
+.experiences {
+    padding: 3%;
+    /* background-color: bisque; */
+    margin: 3%;
+    backcolor:black;
+    background-color: rgba(205, 216, 159, 0.7);
+}
+img {
+    max-width:80%;
+max-height:80%;
+}

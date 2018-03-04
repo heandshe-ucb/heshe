@@ -56,6 +56,14 @@ $(function () {
         userInputData.time = time;
         userInputData.experienceTypes = experienceTypes;
         console.log(userInputData);
+
+        $.ajax("/api/userinput", {
+            type: "POST",
+            data: userInputData
+        }).then(function(){
+            console.log("User Inputs from webclient");
+            location.href = '/results';
+        })
         // console.log(cityState, distance, duration, date, time, experienceTypes);
 
     });
