@@ -20,6 +20,6 @@ CREATE TABLE usersearches (
     userdate VARCHAR(255) NOT NULL,
     starttime VARCHAR(4) NOT NULL,
     experiencetype VARCHAR(1020) NOT NULL,
-    searchtime DATETIME DEFAULT   CURRENT_TIMESTAMP
+    searchtime DATETIME DEFAULT   CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 );

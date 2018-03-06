@@ -5,7 +5,7 @@ var yelpRouter = require("./controllers/yelp.js");
 var PORT = process.env.PORT || 3001;
 
 var app = express();
-
+var passportSetup = require('./config/passport-setup');
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
 
@@ -32,3 +32,5 @@ app.use(googleplacesRouter);
 app.listen(PORT, function() {
   console.log("App now listening at http://localhost:" + PORT);
 });
+
+

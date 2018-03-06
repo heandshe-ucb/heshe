@@ -3,6 +3,7 @@ var express = require('express');
 var heandshe = require('../models/heandshe');
 
 var router = express.Router();
+var passport = require('passport');
 
 var currentYelpdata = {};
 
@@ -16,6 +17,22 @@ router.get("/", function (req, res) {
     });
 });
 
+//auth login
+router.get('/auth/login', (req, res)=>{
+    res.render('login');
+})
+
+//auth google
+router.get('/auth/google', passport.authenticate('google', {
+    scope: ['profile']
+}));
+
+//auth logout
+router.get('/auth/logout', (req, res)=>{
+    // handles with passport
+    res.send('logging out');
+
+});
 
 router.get("/userinput", function (req, res) {
     heandshe.all(function (data) {
@@ -46,5 +63,9 @@ router.get("/results", function (req, res) {
         res.render('results', hbsObj);
     });
 });
+
+router.get('/auth/google/redirect', passport.authenticate('google'), (req, res) => {
+    res.send('you reached call back URI');
+})
 
 module.exports = router;

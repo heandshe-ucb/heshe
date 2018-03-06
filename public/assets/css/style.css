@@ -101,13 +101,18 @@ text-align: center}
 
 #loginGoogle {
     width: 200px;
+    /* color: red; */
+}
+
+#loginGoogle a{
+    /* width: 200px; */
+    color:black;
 }
 
 .experiences {
     padding: 3%;
     /* background-color: bisque; */
     margin: 3%;
-    backcolor:black;
     background-color: rgba(205, 216, 159, 0.7);
 }
 img {
