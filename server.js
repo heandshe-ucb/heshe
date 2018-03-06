@@ -1,5 +1,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+var yelpRouter = require("./controllers/yelp.js");
 
 var PORT = process.env.PORT || 3001;
 
@@ -24,6 +25,9 @@ app.set("view engine", "handlebars");
 var routes = require("./controllers/heandshe_controllers");
 
 app.use(routes);
+
+app.use(googleplacesRouter);
+
 
 app.listen(PORT, function() {
   console.log("App now listening at http://localhost:" + PORT);
