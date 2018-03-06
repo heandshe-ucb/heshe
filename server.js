@@ -1,6 +1,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-var yelpRouter = require("./controllers/yelp.js");
+//var yelpRouter = require("./controllers/yelp.js");
 
 var PORT = process.env.PORT || 3001;
 
@@ -26,7 +26,7 @@ var routes = require("./controllers/heandshe_controllers");
 
 app.use(routes);
 
-app.use(googleplacesRouter);
+//app.use(yelpRouter);
 
 
 app.listen(PORT, function() {

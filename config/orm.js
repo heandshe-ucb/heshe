@@ -10,7 +10,14 @@ var orm = {
             cb(result);
         });
     },
-
+    selectOne: function(table_name, cb){
+        // tableName - Users
+        var queryString = "SELECT experiencetype FROM usersearches where id=(SELECT max(id) FROM usersearches);"
+        connection.query(queryString, function(err, result){
+            if(err) throw err;
+            cb(result);
+        });
+    },
     insertOne: function(table_name, username, citystate, distance, duration, date, time, experienceTypes, cb){
         var queryString = "INSERT INTO ?? (username, searchlocation, traveldistance, hourstospend, userdate, starttime, experiencetype) VALUES (?,?,?,?,?,?,?);"
         connection.query(queryString, [table_name, username, citystate, distance, duration, date, time, experienceTypes], function(err, result){

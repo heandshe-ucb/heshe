@@ -13,6 +13,12 @@ var heandshe = {
         orm.insertOne("usersearches", username, citystate, distance, duration, date, time, experienceTypes, function(res){
             cb(res);
         })
+    },
+    //we'll want to filter on the most recent entry (via highest ID number) QUery this one
+    oneusersearch: function(cb) {
+        orm.selectOne("Users", function(res){
+            cb(res);
+        })
     }
 }
 
