@@ -25,10 +25,11 @@ router.get("/yelp", function (req, res) {
         }
         // console.log(hbsObj);
         res.render('index', hbsObj);
+    });
 });
 
 //auth login
-router.get('/auth/login', (req, res)=>{
+router.get('/auth/login', (req, res) => {
     res.render('login');
 })
 
@@ -38,7 +39,7 @@ router.get('/auth/google', passport.authenticate('google', {
 }));
 
 //auth logout
-router.get('/auth/logout', (req, res)=>{
+router.get('/auth/logout', (req, res) => {
     // handles with passport
     res.send('logging out');
 
@@ -56,11 +57,13 @@ router.get("/userinput", function (req, res) {
     });
 });
 
-router.post("/api/userinput", function(req, res){
+router.post("/api/userinput", function (req, res) {
     //put yelp search logic in here
     console.log('in controller post', req.body);
-    heandshe.insert("navinjoy@gmail.com", req.body.cityState, req.body.distance, req.body.duration, req.body.date, req.body.time, req.body['experienceTypes[]'].toString(), function(result){
-        res.json({id : result.insertId});
+    heandshe.insert("navinjoy@gmail.com", req.body.cityState, req.body.distance, req.body.duration, req.body.date, req.body.time, req.body['experienceTypes[]'].toString(), function (result) {
+        res.json({
+            id: result.insertId
+        });
     })
 
 });
