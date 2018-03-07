@@ -26,6 +26,11 @@ var routes = require("./controllers/heandshe_controllers");
 
 app.use(routes);
 
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
+
 //app.use(yelpRouter);
 
 

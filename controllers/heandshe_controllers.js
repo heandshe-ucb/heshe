@@ -12,7 +12,7 @@ router.get("/", function (req, res) {
         var hbsObj = {
             users: data
         }
-        console.log(hbsObj);
+        // console.log(hbsObj);
         res.render('index', hbsObj);
     });
 });
@@ -33,6 +33,8 @@ router.get('/auth/logout', (req, res)=>{
     res.send('logging out');
 
 });
+
+
 
 router.get("/userinput", function (req, res) {
     heandshe.all(function (data) {

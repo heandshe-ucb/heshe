@@ -18,9 +18,26 @@ var orm = {
             cb(result);
         });
     },
+    selectUserperGID: function(table_name, googleid, cb){
+        // tableName - Users
+        var queryString = "SELECT count(*) FROM ?? where googleid=?;"
+        connection.query(queryString, [table_name, googleid], function(err, result){
+            if(err) throw err;
+            cb(result);
+        });
+    },
     insertOne: function(table_name, username, citystate, distance, duration, date, time, experienceTypes, cb){
         var queryString = "INSERT INTO ?? (username, searchlocation, traveldistance, hourstospend, userdate, starttime, experiencetype) VALUES (?,?,?,?,?,?,?);"
         connection.query(queryString, [table_name, username, citystate, distance, duration, date, time, experienceTypes], function(err, result){
+            console.log(queryString);
+            if (err) throw err;
+            cb(result);
+        })
+    },
+
+    insertuser: function(table_name, displayName, password, firstName, lastName, googleid, cb){
+        var queryString = "INSERT INTO ?? (username, userpassword, firstname, lastname, googleid) VALUES (?,?,?,?,?);"
+        connection.query(queryString, [table_name, displayName, password, firstName, lastName, googleid], function(err, result){
             console.log(queryString);
             if (err) throw err;
             cb(result);
