@@ -17,6 +17,16 @@ router.get("/", function (req, res) {
     });
 });
 
+router.get("/yelp", function (req, res) {
+    heandshe.oneusersearch(function (data) {
+        console.log("in controller --", data[0].experiencetype);
+        var hbsObj = {
+            users: data
+        }
+        // console.log(hbsObj);
+        res.render('index', hbsObj);
+});
+
 //auth login
 router.get('/auth/login', (req, res)=>{
     res.render('login');

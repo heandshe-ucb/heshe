@@ -22,7 +22,7 @@ var heandshe = {
     //we'll want to filter on the most recent entry (via highest ID number) QUery this one
     oneusersearch: function (cb) {
         orm.selectOne("Users", function (res) {
-            console.log('');
+            cb(res);
         })
     },
 
