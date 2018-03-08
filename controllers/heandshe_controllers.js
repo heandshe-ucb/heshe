@@ -4,6 +4,7 @@ var heandshe = require('../models/heandshe');
 
 var router = express.Router();
 var passport = require('passport');
+var yelpApis = require('./yelp');
 
 var currentYelpdata = {};
 
@@ -17,15 +18,35 @@ router.get("/", function (req, res) {
     });
 });
 
-router.get("/yelp", function (req, res) {
+router.get("/results", function (req, res) {
+    var expTypes = [];
+
     heandshe.oneusersearch(function (data) {
-        console.log("in controller --", data[0].experiencetype);
         var hbsObj = {
-            users: data
+            yelpdata: []
         }
-        // console.log(hbsObj);
-        res.render('index', hbsObj);
+        expTypes = data[0].experiencetype.split(",");
+        location = data[0].searchlocation;
+        var count = 0;
+        expTypes.forEach((expType, index) => {
+            yelpApis.getYelpBusinessIDs(location, expType, function (bussidsarr) {
+                // console.log(bussidsarr);
+                yelpApis.getYelpData(bussidsarr, expType, function (response) {
+                    // console.log(index, "************ \n",response)
+                    // console.log(expTypes.length, index);
+                    hbsObj.yelpdata.push(response);
+                    count++;
+                    if (expTypes.length === count) {
+                        // console.log(JSON.stringify(hbsObj));
+                        // res.send(hbsObj);
+                        res.render('results', hbsObj);
+                    }
+                });
+            });
+        });
+
     });
+
 });
 
 //auth login
@@ -52,7 +73,7 @@ router.get("/userinput", function (req, res) {
         var hbsObj = {
             users: data
         }
-        console.log(hbsObj);
+        // console.log(hbsObj);
         res.render('userinput', hbsObj);
     });
 });
@@ -74,7 +95,7 @@ router.get("/results", function (req, res) {
         var hbsObj = {
             users: data
         }
-        console.log(hbsObj);
+        // console.log(hbsObj);
         res.render('results', hbsObj);
     });
 });

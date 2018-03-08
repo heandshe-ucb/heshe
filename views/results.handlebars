@@ -1,60 +1,22 @@
 <div class="experiences" id="experience1">
-<h2>Romantic Places</h2>
-<div class="card-deck">
-  <div class="card">
-    <img class="card-img-top" src="assets/images/img1.jpeg" alt="Card image cap">
-    <div class="card-block">
-      <h4 class="card-title" id="exp1option1"></h4>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="assets/images/img1.jpeg" alt="Card image cap">
-    <div class="card-block">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="assets/images/img1.jpeg" alt="Card image cap">
-    <div class="card-block">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-</div>
 
+  {{#each yelpdata}}
+  
+    {{#each this}}
+      <h2>{{@key}}</h2>
+      <div class="card-deck">
+      <br>
+      {{#each this}}
+      <div class="card">
+        <img class="card-img-top" src={{imagelink}} alt="Card image cap">
+        <h4 class="card-title"><a href={{namelink}}>{{businessid}}</a></h4>
+        <h3>Rating: {{rating}}</h3>
+        <p class="card-text"><a href="https://www.google.com/maps/?q={{coordinates.latitude}},{{coordinates.longitude}}">Show on Map</a></p>
+      </div>
+      {{/each}}  
 
-</div>
+    {{/each}}
 
-<div class="experiences" id="experience2">
-<h2>Adventurous Places</h2>
-<div class="card-deck">
-  <div class="card">
-    <img class="card-img-top" src="assets/images/img4.jpeg" alt="Card image cap">
-    <div class="card-block">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="assets/images/img5.jpeg" alt="Card image cap">
-    <div class="card-block">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="assets/images/img6.jpeg" alt="Card image cap">
-    <div class="card-block">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-</div>
+
+  {{/each}}

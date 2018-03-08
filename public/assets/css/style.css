@@ -124,3 +124,11 @@ img {
     max-width:80%;
 max-height:80%;
 }
+
+.card-deck {
+    margin-bottom: 30px;
+}
+
+h4, h3, p {
+    margin: 0px 10px 0px 30px;
+}
