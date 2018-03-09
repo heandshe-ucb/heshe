@@ -10,7 +10,7 @@ var heshemodel = require('../models/heandshe');
 // Tell passport to use google strategy
 passport.use(new GoogleStrategy({
     // options for strategy
-    callbackURL: '/userinput',
+    // callbackURL: '/userinput',
     clientID: keys.google.clientID,
     clientSecret: keys.google.clientSecret
 }, function (accessToken, refreshToken, profile, done) {
