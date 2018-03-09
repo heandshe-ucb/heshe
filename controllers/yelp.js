@@ -1,7 +1,9 @@
 'use strict';
 
 const yelp = require('yelp-fusion');
-const client = yelp.client("mY2myY0InTECradUjqONHUiOCoO5doJ2B3KVkVu05hPUe0PjzHry3mEWYfKcDwTU_S0a8jxdYCbf_KviXfLSb2_1mQBk40zTCdMC4ay_ZqMw6StquuAm3Lbc6d2RWnYx");
+// const client = yelp.client("mY2myY0InTECradUjqONHUiOCoO5doJ2B3KVkVu05hPUe0PjzHry3mEWYfKcDwTU_S0a8jxdYCbf_KviXfLSb2_1mQBk40zTCdMC4ay_ZqMw6StquuAm3Lbc6d2RWnYx");
+const client = yelp.client("fWy0ShZaNSsrRNosPtLPwUAWQtcBW-TUkGVhelu6B_Md_zH6s_WJ2tQSx4YgWLZLwjP7kDLPNLJQEZvMtT4mr77jREmU7seMZRnN8M5ahtPviAxWulofyKEIueGYWnYx");
+
 
 var yelpApis = {
 

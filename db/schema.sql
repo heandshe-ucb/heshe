@@ -4,7 +4,7 @@ USE heandshe_db;
 
 CREATE TABLE users (
     id INT NOT NULL AUTO_INCREMENT,
-    username NOT NULL VARCHAR(255), 
+    username VARCHAR(255) NOT NULL, 
     userpassword VARCHAR(255) NULL,
     firstname VARCHAR(255) NULL,
     lastname VARCHAR(255) NULL,
